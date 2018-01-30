@@ -46,7 +46,7 @@ void MTCH112::WriteReg(unsigned char register_address, unsigned char value)
   Serial.print(register_address,HEX);Serial.print("=");Serial.print(currVal);
   Serial.print(" changing to ");Serial.println(value);
   if (value != currVal){
-     Wire.beginTransmission(MTCH112_I2C_DEFUALT_ADDR); // transmit to device #112 (0x70)
+     Wire.beginTransmission(MTCH112_I2C_DEFUALT_ADDR);
   Wire.write(WP_BYTE_H);
   Wire.write(WP_BYTE_L);
   Wire.write(register_address); 
